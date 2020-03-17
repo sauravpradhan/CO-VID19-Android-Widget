@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.util.Log;
 import android.widget.RemoteViews;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -26,8 +27,8 @@ import okhttp3.Response;
  * Implementation of App Widget functionality.
  */
 public class WidgetMain extends AppWidgetProvider {
-    private static final String REST_END_POINT = "https://api.rootnet.in/covid19-in/stats/latest";
-    public String total, confirmedcasesindian, confirmedcasesforeign, discharged, deaths, actualData;
+    private static final String REST_END_POINT = "https://coronavirus-19-api.herokuapp.com/countries";
+    public int total, cases_today, recovered, deaths;
     private final int INTERVAL_MILLIS = 10000;
     public static final String ACTION_AUTO_UPDATE = "com.saurav.covid_19widget.AUTO_UPDATE";
     private final int ALARM_ID = 0;
@@ -39,15 +40,14 @@ public class WidgetMain extends AppWidgetProvider {
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
         //views.setTextViewText(R.id.heading, widgetText);
-        if(total != null) {
-            views.setTextViewText(R.id.total, "Total: " + total);
-            views.setTextViewText(R.id.confirmed_indian, "Confirmed Indians: " + confirmedcasesindian);
-            views.setTextViewText(R.id.confirmed_foreign, "Confirmed Foreigners: " + confirmedcasesforeign);
-            views.setTextViewText(R.id.discharged, "Discharged: " + discharged);
-            views.setTextViewText(R.id.deaths, "Deaths: " + deaths);
-            // Instruct the widget manager to update the widget
-            appWidgetManager.updateAppWidget(appWidgetId, views);
-        }
+        //if(total != 0) {
+        views.setTextViewText(R.id.total, "Total: " + total);
+        views.setTextViewText(R.id.cases_today, "Cases Today: " + cases_today);
+        views.setTextViewText(R.id.discharged, "Discharged: " + recovered);
+        views.setTextViewText(R.id.deaths, "Deaths: " + deaths);
+        // Instruct the widget manager to update the widget
+        appWidgetManager.updateAppWidget(appWidgetId, views);
+        //}
     }
 
     @Override
@@ -97,7 +97,7 @@ public class WidgetMain extends AppWidgetProvider {
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                Log.d("s@urax", "Some shit failed!" + e);
+                Log.d("s@urax", "Request Failed:" + e);
             }
 
             @Override
@@ -105,23 +105,21 @@ public class WidgetMain extends AppWidgetProvider {
                 String responseStr = response.body().string();
                 Log.d("s@urax", "Response:" + responseStr);
                 try {
-                    // JSONArray Jarray = new JSONArray(responseStr);
-                    //for (int i = 0; i < Jarray.length(); i++) {
-                    JSONObject object = new JSONObject(responseStr);
-                    String summary = object.getString("data");
-                    Log.d("s@urax", "Summary is:" + object.getString("data"));
-                    JSONObject object2 = new JSONObject(summary);
-                    actualData = object2.getString("summary");
-                    JSONObject object3 = new JSONObject(actualData);
-                    Log.d("s@urax", "Other values are:" + actualData);
-                    total = object3.getString("total");
-                    confirmedcasesindian = object3.getString("confirmedCasesIndian");
-                    confirmedcasesforeign = object3.getString("confirmedCasesForeign");
-                    discharged = object3.getString("discharged");
-                    deaths = object3.getString("deaths");
-                    for (int appWidgetId : appWidgetIds) {
-                        updateAppWidget(context, appWidgetManager, appWidgetId);
+                    JSONArray jsonarray = new JSONArray(responseStr);
+                    for (int i = 0; i < jsonarray.length(); i++) {
+                        JSONObject jsonobject = jsonarray.getJSONObject(i);
+                        if (jsonobject.get("country").equals("India")) {
+                            Log.d("s@urax", "Json:" + jsonobject.toString());
+                            total = jsonobject.getInt("cases");
+                            cases_today = jsonobject.getInt("todayCases");
+                            recovered = jsonobject.getInt("recovered");
+                            deaths = jsonobject.getInt("deaths");
+                            for (int appWidgetId : appWidgetIds) {
+                                updateAppWidget(context, appWidgetManager, appWidgetId);
+                            }
+                        }
                     }
+
                 } catch (JSONException e) {
                     Log.d("s@urax", "Exception:" + e);
                     e.printStackTrace();
@@ -152,7 +150,7 @@ public class WidgetMain extends AppWidgetProvider {
         //Updating at most on 30 mins as per developer docs:
         //https://developer.android.com/reference/android/appwidget/AppWidgetProviderInfo.html#updatePeriodMillis
 
-        Log.d("s@urav ", "Alarm Fired " + intent.getAction());
+        Log.d("s@urav ", "Widget Receiver:" + intent.getAction());
         if (intent.getAction().equals(ACTION_AUTO_UPDATE)) {
             //Log.d("s@urav ", "Alarm Fired ");
             /*Intent updateIntent = new Intent(context.getApplicationContext(), WidgetMain.class);

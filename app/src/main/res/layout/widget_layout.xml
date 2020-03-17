@@ -32,23 +32,17 @@
         android:text="Total:" />
 
     <TextView
-        android:id="@+id/confirmed_indian"
+        android:id="@+id/cases_today"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/total"
-        android:text="Confirmed Indians:" />
-    <TextView
-        android:id="@+id/confirmed_foreign"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/confirmed_indian"
-        android:text="Confirmed Foreigners:" />
+        android:text="Cases Today:" />
 
     <TextView
         android:id="@+id/discharged"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/confirmed_foreign"
+        android:layout_below="@+id/cases_today"
         android:text="Discharged:" />
 
     <TextView
