@@ -14,7 +14,7 @@ Just search for widget named: "COVID-19 Widget" and apply.
 API from: https://github.com/amodm/api-covid19-in
 
 # Apk Link Google Drive:
-https://drive.google.com/file/d/12XKCCtt4UHHBItae7nuIx-5WrVJdsasU/view?usp=sharing
+https://drive.google.com/file/d/1EG4RYLZlD6AKfqHHHdNG5PwFwO3-q0MQ/view
 
 Screen Shot:
 =============
