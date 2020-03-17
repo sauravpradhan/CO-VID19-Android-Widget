@@ -1,7 +1,7 @@
 # CO-VID19 India Tracker Android Widget
 A widget that shows CO-VID19 infected patients and some more informtaion of India regarding it. Updates every 30 mins.
 
-#How to use ?
+# How to use ?
 Just search for widget named: "COVID-19 Widget" and apply.
 
 # API INFO:
