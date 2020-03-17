@@ -1,8 +1,10 @@
 
-
-![Alt text](https://user-images.githubusercontent.com/1622949/76855907-225b6280-6878-11ea-8ad0-dd879453e5be.png "COVID-19 Information")
-
 # CO-VID19 India Tracker Android Widget
+
+
+![Alt text](https://user-images.githubusercontent.com/1622949/76855907-225b6280-6878-11ea-8ad0-dd879453e5be.png "")
+
+
 A widget that shows CO-VID19 infected patients and some more informtaion of India regarding it. Updates every 30 mins.
 
 # How to use ?
