@@ -21,5 +21,5 @@ Screen Shot:
 ![Alt text](https://user-images.githubusercontent.com/1622949/76842541-70646c00-6860-11ea-927e-ed6ef443fa66.png "Optional title")
 
 # Issues:
-Please raise a github issue if you find any issue in the app. Will try to resolve it asap.
+Please raise a github issue if you find any issue in the app.
 
