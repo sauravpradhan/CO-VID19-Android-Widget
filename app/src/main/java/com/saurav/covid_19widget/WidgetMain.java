@@ -39,14 +39,15 @@ public class WidgetMain extends AppWidgetProvider {
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
         //views.setTextViewText(R.id.heading, widgetText);
-        views.setTextViewText(R.id.total, "Total: " + total);
-        views.setTextViewText(R.id.confirmed_indian, "Confirmed Indians: " + confirmedcasesindian);
-        views.setTextViewText(R.id.confirmed_foreign, "Confirmed Foreigners: " + confirmedcasesforeign);
-        views.setTextViewText(R.id.discharged, "Discharged: " + discharged);
-        views.setTextViewText(R.id.deaths, "Deaths: " + deaths);
-
-        // Instruct the widget manager to update the widget
-        appWidgetManager.updateAppWidget(appWidgetId, views);
+        if(total != null) {
+            views.setTextViewText(R.id.total, "Total: " + total);
+            views.setTextViewText(R.id.confirmed_indian, "Confirmed Indians: " + confirmedcasesindian);
+            views.setTextViewText(R.id.confirmed_foreign, "Confirmed Foreigners: " + confirmedcasesforeign);
+            views.setTextViewText(R.id.discharged, "Discharged: " + discharged);
+            views.setTextViewText(R.id.deaths, "Deaths: " + deaths);
+            // Instruct the widget manager to update the widget
+            appWidgetManager.updateAppWidget(appWidgetId, views);
+        }
     }
 
     @Override
