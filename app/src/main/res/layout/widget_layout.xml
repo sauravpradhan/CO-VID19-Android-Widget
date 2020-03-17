@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/layout_bg"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp"
+    android:paddingRight="6dp"
+    android:paddingLeft="6dp">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/virus"
+        android:paddingRight="3dp"/>
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(COVID-19) India Status"
+        android:layout_toRightOf="@id/image"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heading"
+        android:text="Total:" />
+
+    <TextView
+        android:id="@+id/confirmed_indian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/total"
+        android:text="Confirmed Indians:" />
+    <TextView
+        android:id="@+id/confirmed_foreign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/confirmed_indian"
+        android:text="Confirmed Foreigners:" />
+
+    <TextView
+        android:id="@+id/discharged"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/confirmed_foreign"
+        android:text="Discharged:" />
+
+    <TextView
+        android:id="@+id/deaths"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/discharged"
+        android:text="Deaths:" />
+</RelativeLayout>
