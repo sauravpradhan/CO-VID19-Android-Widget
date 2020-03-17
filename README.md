@@ -5,7 +5,7 @@ A widget that shows CO-VID19 infected patients and some more informtaion of Indi
 API from: https://github.com/amodm/api-covid19-in
 
 #APK Link:
-https://drive.google.com/file/d/1DtuM-92t1D5l8O_dFN3hen8bI3RNuWFu/view
+https://drive.google.com/file/d/12XKCCtt4UHHBItae7nuIx-5WrVJdsasU/view?usp=sharing
 
 Screen Shot:
 =============
