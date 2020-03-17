@@ -2,7 +2,7 @@
 A widget that shows CO-VID19 infected patients and some more informtaion of India regarding it. Updates every 30 mins.
 
 # API INFO:
-All API work from: https://github.com/amodm/api-covid19-in
+API from: https://github.com/amodm/api-covid19-in
 
 #APK Link:
 https://drive.google.com/file/d/1DtuM-92t1D5l8O_dFN3hen8bI3RNuWFu/view
