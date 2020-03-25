@@ -28,7 +28,7 @@ Screen Shot:
 
 
 # Known Issues:
-1) Widget refresh button wont animate.
+1) Widget refresh button won't animate.
 2) Multiple instances of the widget will update all instances with info from last country selected.
 
 
