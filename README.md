@@ -24,7 +24,8 @@ https://drive.google.com/file/d/1EG4RYLZlD6AKfqHHHdNG5PwFwO3-q0MQ/view
 
 Screen Shot:
 =============
-https://user-images.githubusercontent.com/1622949/77533640-40027a80-6ebd-11ea-85df-f5b630773b53.png
+![Alt text](https://user-images.githubusercontent.com/1622949/77533640-40027a80-6ebd-11ea-85df-f5b630773b53.png "")
+
 
 # Known Issues:
 1) Widget refresh button wont animate.
