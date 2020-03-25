@@ -20,7 +20,7 @@
         android:id="@+id/heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="(COVID-19) India Status"
+        android:text="(COVID-19) Country Status"
         android:layout_toRightOf="@id/image"
         android:textStyle="bold"/>
 
@@ -51,4 +51,19 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/discharged"
         android:text="Deaths:" />
+    <ImageView
+        android:id="@+id/refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/refresh"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/discharged"/>
+   <!--<ProgressBar
+       android:id="@+id/refresh"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentEnd="true"
+       android:layout_below="@id/discharged"
+       android:progress="100"
+       android:visibility="visible"/>-->
 </RelativeLayout>
