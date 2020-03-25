@@ -2,7 +2,7 @@
 # CO-VID19 India Tracker Android Widget
 
 
-![Alt text](https://user-images.githubusercontent.com/1622949/76857243-0d340300-687b-11ea-940c-fb7c938fc62e.png "")
+![Alt text](https://user-images.githubusercontent.com/1622949/77534561-e56a1e00-6ebe-11ea-9bf7-a78fca35b9d4.png "")
 
 
 A widget that shows CO-VID19 infected patients and some more informtaion of selected country. 
