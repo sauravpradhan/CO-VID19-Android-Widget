@@ -15,7 +15,7 @@ After installing APK, Just search for widget named: "COVID-19 Widget" and apply.
 Now moved api endpoint to:
 https://coronavirus-19-api.herokuapp.com/countries
 
-For indian widget was using V1:
+Old Version 1 of the widget was using:
 API from: https://github.com/amodm/api-covid19-in
 
 
