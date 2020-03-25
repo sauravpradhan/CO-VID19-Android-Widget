@@ -20,7 +20,7 @@ API from: https://github.com/amodm/api-covid19-in
 
 
 # Apk Link Google Drive:
-https://drive.google.com/file/d/1EG4RYLZlD6AKfqHHHdNG5PwFwO3-q0MQ/view
+https://drive.google.com/file/d/1bvNc5jZa_nBkuOmUy5aNZP45iwI8A_AY/view?usp=sharing
 
 Screen Shot:
 =============
