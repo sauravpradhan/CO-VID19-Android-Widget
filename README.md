@@ -1,5 +1,5 @@
 
-# CO-VID19 India Tracker Android Widget
+# CO-VID19 Tracker Android Widget
 
 
 ![Alt text](https://user-images.githubusercontent.com/1622949/77534561-e56a1e00-6ebe-11ea-9bf7-a78fca35b9d4.png "")
