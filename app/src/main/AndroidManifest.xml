@@ -16,7 +16,6 @@
             android:name=".ConfigurationActivity"
             android:configChanges="orientation"
             android:label="@string/title_activity_configuration"
-            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.Dialog.Alert">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />

@@ -22,35 +22,40 @@
         android:layout_height="wrap_content"
         android:text="(COVID-19) Country Status"
         android:layout_toRightOf="@id/image"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"/>
 
     <TextView
         android:id="@+id/total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/heading"
-        android:text="Total:" />
+        android:text="Total:"
+        android:textColor="@color/colorPrimary"/>
 
     <TextView
         android:id="@+id/cases_today"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/total"
-        android:text="Cases Today:" />
+        android:text="Cases Today:"
+        android:textColor="@color/colorPrimary"/>
 
     <TextView
         android:id="@+id/discharged"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cases_today"
-        android:text="Discharged:" />
+        android:text="Discharged:"
+        android:textColor="@color/colorPrimary"/>
 
     <TextView
         android:id="@+id/deaths"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/discharged"
-        android:text="Deaths:" />
+        android:text="Deaths:"
+        android:textColor="@color/colorPrimary"/>
     <ImageView
         android:id="@+id/refresh"
         android:layout_width="wrap_content"
