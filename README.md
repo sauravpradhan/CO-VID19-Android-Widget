@@ -35,7 +35,7 @@ Screen Shot:
 1) Widget refresh button won't animate.
 2) Multiple instances of the widget will update all instances with info from last country selected.
 
-#Chronology
+# Chronology
 V1 -> Only India related info 
 V2 -> Adedd Refresh button and included world wide data
 V3 -> UI changes and Background hue
