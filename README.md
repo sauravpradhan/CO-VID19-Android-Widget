@@ -20,7 +20,11 @@ API from: https://github.com/amodm/api-covid19-in
 
 
 # Apk Link Google Drive:
+Without bacground Hue
 https://drive.google.com/file/d/1bvNc5jZa_nBkuOmUy5aNZP45iwI8A_AY/view?usp=sharing
+
+With Background Hue
+https://drive.google.com/file/d/1sZPr6Ff6UhEgy0Egtv26nkahK9cev8gO/view?usp=sharing
 
 Screen Shot:
 =============
@@ -30,5 +34,10 @@ Screen Shot:
 # Known Issues:
 1) Widget refresh button won't animate.
 2) Multiple instances of the widget will update all instances with info from last country selected.
+
+#Chronology
+V1 -> Only India related info 
+V2 -> Adedd Refresh button and included world wide data
+V3 -> UI changes and Background hue
 
 
