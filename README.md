@@ -31,7 +31,7 @@ Screen Shot:
 # Known Issues:
 1) Widget refresh button won't animate.
 
-#Update
+# Update Future
 1) Make Hue on config screen
 2) CHange endpoint API to a frequent updating one 
 
