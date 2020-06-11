@@ -41,16 +41,24 @@ public class WidgetMain extends AppWidgetProvider {
                          int appWidgetId) {
         SharedPreferences pref = context.getSharedPreferences("CovidwidgetPref", 0);
         String country = pref.getString("selected_country", "Nepal");
+
+        String selected_country_with_id = pref.getString("widget_id_" + appWidgetId, "null");
+        int begin = selected_country_with_id.length();
+        int end = Integer.toString(appWidgetId).length();
+        String country_from_pref = selected_country_with_id.substring(0, (begin - end));
         //CharSequence widgetText = context.getString(R.string.appwidget_text);
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
         //views.setTextViewText(R.id.heading, widgetText);
         //if(total != 0) {
         views.setOnClickPendingIntent(R.id.refresh, getPendingIntent(context));
-        views.setTextViewText(R.id.heading, context.getString(R.string.title) + " : " + country);
+        views.setTextViewText(R.id.heading, context.getString(R.string.title) + " : " + country_from_pref);
         views.setTextViewText(R.id.total, "Total: " + total);
         views.setTextViewText(R.id.cases_today, "Cases Today: " + cases_today);
         views.setTextViewText(R.id.discharged, "Discharged: " + recovered);
         views.setTextViewText(R.id.deaths, "Deaths: " + deaths);
+
+       // views.setInt(R.id.background, "setColorFilter", R.color.colorPrimaryDark);
+
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);
         //}
@@ -70,7 +78,7 @@ public class WidgetMain extends AppWidgetProvider {
         //startAlarm(context);
         SharedPreferences pref = context.getSharedPreferences("CovidwidgetPref", 0);
         String country = pref.getString("selected_country", "null");
-        Log.d("s@urax", "Updating Widget for:" + country);
+        //Log.d("s@urax", "Updating Widget for:" + country);
         if (!country.equals(null)) {
             Log.d("s@urax", "Calling fetchdatafrom web call!");
             fetchDataFromWeb(context, appWidgetManager, appWidgetIds);
@@ -101,6 +109,7 @@ public class WidgetMain extends AppWidgetProvider {
         client.setWriteTimeout(2, TimeUnit.MINUTES);*/
         SharedPreferences pref = context.getSharedPreferences("CovidwidgetPref", 0);
         String country = pref.getString("selected_country", "null");
+        String selected_country_with_id = pref.getString("selected_country", "null");
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(30, TimeUnit.SECONDS)
                 .writeTimeout(30, TimeUnit.SECONDS)
@@ -120,7 +129,7 @@ public class WidgetMain extends AppWidgetProvider {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 String responseStr = response.body().string();
-                Log.d("s@urax", "Response:" + responseStr);
+                //Log.d("s@urax", "Response:" + responseStr);
                 Intent broadcast = new Intent(ACTION_DATA_FETCHED);
                 ComponentName componentName = new ComponentName(context, WidgetMain.class);
                 broadcast.setComponent(componentName);
@@ -129,17 +138,23 @@ public class WidgetMain extends AppWidgetProvider {
                     JSONArray jsonarray = new JSONArray(responseStr);
                     for (int i = 0; i < jsonarray.length(); i++) {
                         JSONObject jsonobject = jsonarray.getJSONObject(i);
-                        if (jsonobject.get("country").equals(country)/*country.contains(jsonobject.get("country").toString())*/) {
-                            Log.d("s@urax", "Json:" + jsonobject.toString());
-                            total = jsonobject.getInt("cases");
-                            cases_today = jsonobject.getInt("todayCases");
-                            recovered = jsonobject.getInt("recovered");
-                            deaths = jsonobject.getInt("deaths");
-                            for (int appWidgetId : appWidgetIds) {
-                                //Log.d("s@urax", "All widgets-------------->" + pref.getString("selected_country_with_id", "Nepal"));
+                        for (int appWidgetId : appWidgetIds) {
+                            //Log.d("s@urax", "All widgets-------------->" + pref.getString("selected_country_with_id", "Nepal"));
+                            String selected_country_with_id = pref.getString("widget_id_" + appWidgetId, "null");
+                            int begin = selected_country_with_id.length();
+                            int end = Integer.toString(appWidgetId).length();
+                            String country_from_pref = selected_country_with_id.substring(0, (begin - end));
+                            Log.d("s@urax", "Updating for Country:" + country_from_pref);
+                            //Log.d("s@urax","Selected Countries from pref are:"+selected_country_with_id);
+                            if (jsonobject.get("country").equals(country_from_pref)) {
+                                total = jsonobject.getInt("cases");
+                                cases_today = jsonobject.getInt("todayCases");
+                                recovered = jsonobject.getInt("recovered");
+                                deaths = jsonobject.getInt("deaths");
                                 updateAppWidget(context, appWidgetManager, appWidgetId);
                             }
                         }
+                        //}
                     }
 
                 } catch (JSONException e) {

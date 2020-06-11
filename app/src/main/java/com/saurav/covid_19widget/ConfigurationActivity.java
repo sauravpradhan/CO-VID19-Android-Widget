@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,10 +42,10 @@ public class ConfigurationActivity extends AppCompatActivity {
                 AppWidgetProviderInfo appWidgetManager = AppWidgetManager.getInstance(getBaseContext()).getAppWidgetInfo(mAppWidgetId);
                 SharedPreferences pref = getApplicationContext().getSharedPreferences("CovidwidgetPref", 0);
                 SharedPreferences.Editor editor = pref.edit();
-                Log.d("s@urax", "choosenCountry.getSelectedItem()" + choosenCountry.getSelectedItem() + " Widgetid:" + mAppWidgetId);
+                Log.d("s@urax", "ChoosenCountry is:" + choosenCountry.getSelectedItem() + " Widgetid:" + mAppWidgetId);
                 //selectedCountry = choosenCountry.getSelectedItem().toString();
                 editor.putString("selected_country", choosenCountry.getSelectedItem().toString()/*+mAppWidgetId*/);
-                editor.putString("selected_country_with_id", choosenCountry.getSelectedItem().toString() + mAppWidgetId);
+                editor.putString("widget_id_"+mAppWidgetId, choosenCountry.getSelectedItem().toString() + mAppWidgetId);
                 editor.commit();
                 Intent intent = new Intent();
                 intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, mAppWidgetId);
@@ -59,6 +60,9 @@ public class ConfigurationActivity extends AppCompatActivity {
     public static void updateWidgets(Context context) {
         Intent intent = new Intent(context, WidgetMain.class);
         intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+
+        //Background Hue chooser Logic
+
         // Use an array and EXTRA_APPWIDGET_IDS instead of AppWidgetManager.EXTRA_APPWIDGET_ID,
         // since it seems the onUpdate() is only fired on that:
         AppWidgetManager widgetManager = AppWidgetManager.getInstance(context);
