@@ -21,10 +21,7 @@ API from: https://github.com/amodm/api-covid19-in
 
 # Apk Link Google Drive:
 Without bacground Hue
-https://drive.google.com/file/d/1bvNc5jZa_nBkuOmUy5aNZP45iwI8A_AY/view?usp=sharing
-
-With Background Hue
-https://drive.google.com/file/d/1sZPr6Ff6UhEgy0Egtv26nkahK9cev8gO/view?usp=sharing
+https://drive.google.com/file/d/1JyBc_voFWMqXfShsK0BNjejiGWBWCNS1/view?usp=sharing
 
 Screen Shot:
 =============
@@ -39,5 +36,6 @@ Screen Shot:
 V1 -> Only India related info 
 V2 -> Adedd Refresh button and included world wide data
 V3 -> UI changes and Background hue
+V4 -> Multiple Instances of the Widget with Different countries is possible
 
 
