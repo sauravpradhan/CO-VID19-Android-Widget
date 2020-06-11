@@ -30,7 +30,10 @@ Screen Shot:
 
 # Known Issues:
 1) Widget refresh button won't animate.
-2) Multiple instances of the widget will update all instances with info from last country selected.
+
+#Update
+1) Make Hue on config screen
+2) CHange endpoint API to a frequent updating one 
 
 # Chronology
 V1 -> Only India related info 
