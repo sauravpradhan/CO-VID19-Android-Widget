@@ -9,7 +9,11 @@ A widget that shows CO-VID19 infected patients and some more informtaion of sele
 Updates every 30 mins.
 
 # How to use ?
-After installing APK, Just search for widget named: "COVID-19 Widget" and apply.
+After installing APK, Just search for widget named: "COVID-19 Widget" and apply and choose your desired country.
+
+# Apk Link Google Drive:
+Without bacground Hue
+https://drive.google.com/file/d/1JyBc_voFWMqXfShsK0BNjejiGWBWCNS1/view?usp=sharing
 
 # Api Info:
 Now moved api endpoint to:
@@ -18,10 +22,6 @@ https://coronavirus-19-api.herokuapp.com/countries
 Old Version 1 of the widget was using:
 API from: https://github.com/amodm/api-covid19-in
 
-
-# Apk Link Google Drive:
-Without bacground Hue
-https://drive.google.com/file/d/1JyBc_voFWMqXfShsK0BNjejiGWBWCNS1/view?usp=sharing
 
 Screen Shot:
 =============
