@@ -27,18 +27,20 @@ Screen Shot:
 =============
 ![Alt text](https://user-images.githubusercontent.com/1622949/77533640-40027a80-6ebd-11ea-85df-f5b630773b53.png "")
 
+![WhatsApp Image 2020-06-12 at 10 14 03 AM(1)](https://user-images.githubusercontent.com/1622949/84469365-81c1e680-ac9e-11ea-90ca-a6d8c624da13.jpeg)
+
 
 # Known Issues:
 1) Widget refresh button won't animate.
 
 # Update Future
 1) Make Hue on config screen
-2) CHange endpoint API to a frequent updating one 
+2) Change endpoint API to a frequent updating one 
 
 # Chronology
-V1 -> Only India related info 
-V2 -> Adedd Refresh button and included world wide data
-V3 -> UI changes and Background hue
-V4 -> Multiple Instances of the Widget with Different countries is possible
+# V1 -> Only India related info 
+# V2 -> Adedd Refresh button and included world wide data
+# V3 -> UI changes and Background hue
+# V4 -> Multiple Instances of the Widget with Different countries is possible
 
 
