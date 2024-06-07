@@ -39,7 +39,7 @@ Screen Shot:
 
 # Chronology
 # V1 -> Only India related info 
-# V2 -> Adedd Refresh button and included world wide data
+# V2 -> Added Refresh button and included world wide data
 # V3 -> UI changes and Background hue
 # V4 -> Multiple Instances of the Widget with Different countries is possible
 
