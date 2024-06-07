@@ -38,9 +38,9 @@ Screen Shot:
 2) Change endpoint API to a frequent updating one 
 
 # Chronology
-# V1 -> Only India related info 
-# V2 -> Added Refresh button and included world wide data
-# V3 -> UI changes and Background hue
-# V4 -> Multiple Instances of the Widget with Different countries is possible
+V1 -> Only India related info 
+V2 -> Added Refresh button and included world wide data
+V3 -> UI changes and Background hue
+V4 -> Multiple Instances of the Widget with Different countries is possible
 
 
